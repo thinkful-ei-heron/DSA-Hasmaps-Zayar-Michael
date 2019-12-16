@@ -21,7 +21,8 @@ class HashMap {
       //0x5* and 0x6* are all letters (and most of 0x4* and 0x7*)
       //0x8*-0xF* are extended and relatively rare
       //so a shift of 5 is good because it mixes the high-entropy low-order bits into the low-entropy high-order bits
-      hash = (hash << 5) + hash + string.charCodeAt[i];
+      hash = (hash << 5) + hash + string.charCodeAt(i);
+
       hash = hash & 0xffffffff; //keep lower 32 bits
     }
     return hash >>> 0;
